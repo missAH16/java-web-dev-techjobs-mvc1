@@ -8,6 +8,7 @@ td, th {
 
 th {
     text-align: center;
+    color: #191970;
 }
 
 td {
@@ -15,7 +16,7 @@ td {
 }
 
 tr:nth-child(odd) {
-    background-color: #e4e4e4;
+    background-color: #FFEFD5;
 }
 
 .centeredTable {
@@ -25,7 +26,7 @@ tr:nth-child(odd) {
 
 table.job-listing {
     margin: 30px auto;
-    border: 1px solid #e4e4e4;
+    border: 1px solid #FFEFD5;
     width: 80%;
 }
 
