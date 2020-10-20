@@ -21,7 +21,7 @@
                         th:id="${column.key}"
                         th:value="${column.key}"
                         th:checked="${column.key == 'all'}">
-                <label th:for="${column.key}" th:text="${column.value}"></label>
+                <label th:for="${column.key}" th:text="${column.value}" />
             </span>
 
         </p>
@@ -30,14 +30,15 @@
             <label for="searchTerm">Keyword:</label>
             <input type="text" name="searchTerm" id="searchTerm">
         </p>
+    <input type="submit" value="Search" class="btn btn-info">
 
-        <input type="submit" value="Search">
     </form>
 
     <hr />
+</div>
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
-    <table class="job-listing" th:each="job : ${jobs}">
+    <table class="results" th:each="job : ${jobs}">
         <tr>
             <th>ID</th>
             <td th:text="${job.getId()}"></td>
@@ -48,20 +49,21 @@
         </tr>
         <tr>
             <th>Employer</th>
-            <td th:text="${job.getEmployer()}"></td>
+            <td><a th:href="@{/list/jobs(column=employer,value=${job.getEmployer()})}"  th:text="${job.getEmployer()}"></a></td>
         </tr>
         <tr>
             <th>Location</th>
-            <td th:text="${job.getLocation()}"></td>
+            <td><a th:href="@{/list/jobs(column=location,value=${job.getLocation()})}" th:text="${job.getLocation()}"></a></td>
         </tr>
         <tr>
             <th>Position Type</th>
-            <td th:text="${job.getPositionType()}"></td>
+            <td><a th:href="@{/list/jobs(column=positionType,value=${job.getPositionType()})}" th:text="${job.getPositionType()}"></a></td>
         <tr>
             <th>Skill</th>
-        <td th:text="${job.getCoreCompetency()}"></td>
+        <td><a th:href="@{/list/jobs(column=coreCompetency,value=${job.getCoreCompetency()})}" th:text="${job.getCoreCompetency()}"></a></td>
+            <th>  </th>
         </tr>
     </table>
-</div>
+
 </body>
 </html>

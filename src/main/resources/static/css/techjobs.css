@@ -15,19 +15,19 @@ td {
     vertical-align: top;
 }
 
-tr:nth-child(odd) {
-    background-color: #FFEFD5;
-}
-
 .centeredTable {
     margin-left: auto;
     margin-right: auto;
 }
 
+table.job-listing:nth-child(odd) {
+    background-color: #FFEFD5;
+}
+
 table.job-listing {
-    margin: 30px auto;
-    border: 1px solid #FFEFD5;
-    width: 80%;
+    margin: 20x left;
+    border: 1px;
+    width: 50%;
 }
 
 table.job-listing td:first-child {
@@ -45,3 +45,30 @@ label {
 .centered {
     text-align: center;
 }
+
+table.results:nth-child(odd) {
+    background-color: #FFEFD5;
+}
+
+table.results {
+    margin: 20x left;
+    border: 1px;
+    width: 50%;
+}
+
+table.results td:first-child {
+    font-weight: bold;
+}
+
+table.results td:last-child {
+    width: 80%;
+}
+
+label {
+    margin-right: 15px;
+}
+
+.centered {
+    text-align: center;
+}
+
