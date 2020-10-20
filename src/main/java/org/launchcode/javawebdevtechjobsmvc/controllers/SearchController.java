@@ -37,15 +37,22 @@ public class SearchController {
         if (searchType.equals("all")) {
             jobs = JobData.findAll();
             model.addAttribute("title", "All Jobs");
+            model.addAttribute("columns", columnChoices);
+            model.addAttribute("jobs", jobs);
+
+        } else if (searchTerm.equals("")) {
+            jobs = JobData.findByValue(searchTerm);
+            model.addAttribute("columns", columnChoices);
+            model.addAttribute("title", "Jobs With " + columnChoices.get(searchType));
             model.addAttribute("jobs", jobs);
 
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
-            model.addAttribute("title", "Jobs With " + columnChoices.get(searchType) + ": " + columnChoices.get(searchTerm));
+            model.addAttribute("columns", columnChoices);
+            model.addAttribute("title", "Jobs With " + columnChoices.get(searchType) + ": " + searchTerm);
             model.addAttribute("jobs", jobs);
         }
-
-        return "search";
+            return "search";
 
     }
 }

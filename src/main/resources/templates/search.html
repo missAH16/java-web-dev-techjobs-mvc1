@@ -12,7 +12,6 @@
 
     <form th:action="@{/search/results}" method = "post">
         <h2>Search by:</h2>
-
         <p>
             <span th:each="column : ${columns}">
                 <input
@@ -35,7 +34,6 @@
     </form>
 
     <hr />
-</div>
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
     <table class="results" th:each="job : ${jobs}">
@@ -64,6 +62,6 @@
             <th>  </th>
         </tr>
     </table>
-
+</div>
 </body>
 </html>

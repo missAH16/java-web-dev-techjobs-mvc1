@@ -21,7 +21,7 @@ td {
 }
 
 table.job-listing:nth-child(odd) {
-    background-color: #FFEFD5;
+    background-color: #E6E6FA;
 }
 
 table.job-listing {
@@ -46,8 +46,8 @@ label {
     text-align: center;
 }
 
-table.results:nth-child(odd) {
-    background-color: #FFEFD5;
+table.results:nth-child(even) {
+    background-color: #E6E6FA;
 }
 
 table.results {
